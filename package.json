@@ -1,0 +1,1 @@
+{"name":"followup-crm","version":"0.1.0","private":true,"license":"MIT","scripts":{"test":"node --test tests/*.test.js && node tests/ui-smoke.js"},"devDependencies":{"jsdom":"^26.0.0"}}

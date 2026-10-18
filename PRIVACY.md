@@ -1,0 +1,2 @@
+# Privacy
+FollowUp runs entirely in your browser. Leads are stored in your browser’s local storage and, only if you connect one, in the shared folder you choose. Nothing is sent to any server run by this project. No analytics, no accounts. “Copy prompt for an AI chat” only copies text to your clipboard; what you paste elsewhere is your choice. Don’t put real client data in public GitHub issues or screenshots.
