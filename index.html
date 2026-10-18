@@ -38,15 +38,33 @@ pre{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:
 .sug button{margin:4px 6px 0 0}
 footer{color:var(--mute);font-size:.85rem;margin:28px 0 10px}
 @media(max-width:560px){.grid{grid-template-columns:1fr}.row{flex-direction:column;align-items:stretch}}
+
+/* SaaS polish: subtle motion, refined surfaces, and reduced-motion support */
+@keyframes fu-rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+main{animation:fu-rise .35s ease-out both}
+#view>*{animation:fu-rise .24s ease-out both}
+button,a,.b,nav button{transition:transform .16s ease,box-shadow .16s ease,background-color .16s ease,border-color .16s ease}
+button:hover,.b:hover,nav button:hover{transform:translateY(-1px);box-shadow:0 5px 16px #20264a12}
+button:active,.b:active{transform:translateY(0)}
+input,select,textarea{transition:border-color .16s ease,box-shadow .16s ease}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--acc);box-shadow:0 0 0 3px color-mix(in srgb,var(--acc) 16%,transparent)}
+.workspace-bridge{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:14px 0;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--card);box-shadow:0 8px 24px #28316b08}
+.workspace-bridge p{margin:4px 0 0;color:var(--mute);font-size:.9rem}
+.workspace-bridge a{display:inline-flex;align-items:center;gap:8px;white-space:nowrap;text-decoration:none;background:var(--acc);color:white;padding:10px 14px;border-radius:10px;font-weight:650}
+.workspace-bridge a:hover{filter:brightness(1.04)}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+@media(max-width:560px){.workspace-bridge{align-items:stretch;flex-direction:column}.workspace-bridge a{justify-content:center}}
+
 </style>
 </head>
 <body>
 <main>
 <header><h1>FollowUp</h1><form class="quick" id="quick"><input id="qa" placeholder="New lead: Name, email, what happened or what’s next" aria-label="Quick add lead"><button class="b">Add</button></form></header>
+<section class="workspace-bridge" aria-label="Team workspace"><div><strong>Working with a team?</strong><p>Open the shared, cloud-backed workspace to manage separate teams, invitations and assigned leads.</p></div><a href="https://chriss1o1.github.io/followup-crm-test/shared-crm.html">Open team workspace <span aria-hidden="true">↗</span></a></section>
 <nav role="tablist" id="nav"></nav>
 <div id="banner"></div>
 <div id="view"></div>
-<footer>Free and open source. Your data stays on your computer unless you share a folder with your team.</footer>
+<footer>Free and open source. This classic workspace stores data on this device. Team workspace uses cloud storage and separate workspaces.</footer>
 </main>
 <dialog id="dlg"></dialog>
 <input type="file" id="file" accept=".csv,.json" hidden>
