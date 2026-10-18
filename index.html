@@ -247,6 +247,7 @@ async function loadLeads(){
  if(previousOwner&&workspaceMembers.some(m=>m.user_id===previousOwner))ownerFilter.value=previousOwner;
  renderLeads(data||[],memberNames);
  await refreshDashboardData(data||[],memberNames);
+ subscribeRealtime(activeTeam);
 }
 let activeLeads=[];\nlet realtimeChannel=null;let realtimeTeam=null;
 function populateLeadPickers(){for(const id of ['noteLead','taskLead']){const select=$(id);const previous=select.value;select.replaceChildren();activeLeads.forEach(r=>{const p=r.payload||{};const op=document.createElement('option');op.value=r.record_key;op.textContent=(p.name||'Unnamed lead')+(p.company?' — '+p.company:'');select.append(op)});if(previous&&activeLeads.some(r=>r.record_key===previous))select.value=previous}const disabled=!activeLeads.length;$('noteForm').querySelector('button[type=submit]').disabled=disabled;$('taskForm').querySelector('button[type=submit]').disabled=disabled}
