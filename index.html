@@ -21,12 +21,54 @@ header h1{letter-spacing:-.035em}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
 
 
-/* Futuristic FollowUp UI */
-:root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#e9edff;background:#080b17;--purple:#8b7cff;--line:#242b47;--muted:#9aa6c8;color-scheme:dark}body{min-height:100vh;background:radial-gradient(ellipse at 12% 0%,#1c2450 0,transparent 36%),radial-gradient(ellipse at 95% 8%,#251849 0,transparent 30%),#080b17}.wrap{max-width:1280px;margin:0 auto;padding:32px 22px}header{padding:22px 24px;border:1px solid #2c3458;border-radius:22px;background:linear-gradient(135deg,#151d38dd,#101426e8);box-shadow:0 18px 60px #0005;margin-bottom:20px}h1{font-size:clamp(2rem,4vw,3rem);letter-spacing:-.055em;color:#f5f6ff;margin:12px 0 8px}h2{letter-spacing:-.025em;color:#f1f3ff}.card{background:linear-gradient(145deg,#11182cef,#0e1426f7);border:1px solid #293251;border-radius:18px;padding:22px;margin:16px 0;box-shadow:0 14px 44px #0002;backdrop-filter:blur(14px)}.pill{background:#25214d;color:#c4bcff;border:1px solid #4b438c;font-weight:700;letter-spacing:.08em;text-transform:uppercase}label{font-size:.88rem;color:#c4cce5}input,select{background:#0b1020;color:#f0f2ff;border:1px solid #303958;border-radius:11px;padding:12px 13px}input::placeholder{color:#687595}button{background:linear-gradient(135deg,#8878ff,#6656e8);border-radius:11px;padding:11px 16px;box-shadow:0 6px 18px #6858ec28}button.secondary{background:#1b2340;color:#d3d9ff;border:1px solid #333e65;box-shadow:none}.lead{background:#0c1223;border:1px solid #283351;border-radius:14px;padding:16px;margin:12px 0;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}.lead:hover{transform:translateY(-2px);border-color:#57508d;box-shadow:0 12px 30px #0003}.tag{background:#222844;color:#d4d9ff;border:1px solid #343d62}.message{border:1px solid #303d64;background:#111c36;color:#dce4ff;border-radius:12px;padding:14px}.message.error{background:#321b29;border-color:#693348;color:#ffbdc7}.message.success{background:#102d2b;border-color:#205b50;color:#9ef0d2}@keyframes fu-fade-up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}.wrap{animation:fu-fade-up .45s ease-out both}.card{animation:fu-fade-up .38s ease-out both}button,input,select,.card{transition:background-color .18s ease,border-color .18s ease,box-shadow .18s ease,transform .18s ease}button:hover{transform:translateY(-1px);box-shadow:0 10px 28px #6c5cf344}input:focus,select:focus{outline:none;border-color:#8878ff;box-shadow:0 0 0 3px #8878ff25}@media(max-width:760px){.wrap{padding:14px}header,.card{padding:17px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+/* FollowUp light-first theme with optional dark mode */
+:root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#20233b;background:#f6f7fc;--purple:#6257f5;--line:#e1e5f2;--muted:#68708f;--page:#f6f7fc;--surface:#fff;--surface-alt:#f7f8ff;--text:#20233b;--input-bg:#fff;--input-border:#d8ddef;--shadow:0 8px 24px #28316b0a;color-scheme:light}
+body{min-height:100vh;background:radial-gradient(ellipse at 12% 0%,#eeedff 0,transparent 38%),var(--page);color:var(--text)}
+.wrap{max-width:1280px;margin:0 auto;padding:28px 22px;animation:fu-enter .28s ease-out both}
+header{position:relative;padding:24px;border:1px solid var(--line);border-radius:20px;background:var(--surface);box-shadow:var(--shadow);margin-bottom:20px}
+h1{font-size:clamp(2rem,4vw,2.7rem);letter-spacing:-.05em;color:var(--text);margin:12px 0 8px}
+h2{letter-spacing:-.025em;color:var(--text)}
+p,.muted,small{color:var(--muted)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;margin:16px 0;box-shadow:var(--shadow);transition:box-shadow .12s ease,border-color .12s ease}
+.card:hover{border-color:#d4d8ee;box-shadow:0 10px 28px #28316b0d}
+.pill{background:#eeedff;color:#5145d8;border:1px solid #e2dfff;font-weight:700;letter-spacing:.05em}
+label{font-size:.9rem;color:var(--text)}
+input,select,textarea{background:var(--input-bg);color:var(--text);border:1px solid var(--input-border);border-radius:10px;padding:12px 13px;transition:border-color .1s ease,box-shadow .1s ease}
+input::placeholder,textarea::placeholder{color:#8b91a9}
+button{background:var(--purple);color:white;border:1px solid transparent;border-radius:10px;padding:11px 15px;box-shadow:0 3px 8px #6257f51a;transition:background-color .08s ease,box-shadow .08s ease,transform .08s ease,filter .08s ease}
+button:hover{filter:brightness(1.08);box-shadow:0 5px 12px #6257f52b;transform:translateY(-1px)}
+button:active{filter:brightness(.98);transform:translateY(0);box-shadow:none}
+button.secondary{background:var(--surface-alt);color:#5145d8;border:1px solid var(--line);box-shadow:none}
+button.secondary:hover{background:#eeedff;filter:none}
+button.danger{background:#fff0f0;color:#b42318;border:1px solid #ffdddd;box-shadow:none}
+.lead{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:16px;margin:12px 0;transition:transform .12s ease,border-color .12s ease,box-shadow .12s ease}
+.lead:hover{transform:translateY(-1px);border-color:#c9c4ff;box-shadow:0 6px 18px #28316b0b}
+.tag{background:#f1f2f9;color:#454c6b;border:1px solid #e7e9f4;border-radius:20px;padding:4px 8px}
+.message{border:1px solid #dbe4f6;background:#eef5ff;color:#27395f;border-radius:10px;padding:12px}
+.message.error{background:#fff0f0;border-color:#ffd6d6;color:#b42318}
+.message.success{background:#ecfdf3;border-color:#b7ebca;color:#067647}
+.theme-toggle{position:absolute;right:20px;top:20px;display:inline-flex;align-items:center;gap:8px;margin:0;padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface-alt);color:var(--text);box-shadow:none;font-size:.9rem;font-weight:650}
+.theme-toggle:hover{background:#eeedff;color:#5145d8;box-shadow:0 3px 10px #28316b12;filter:none}
+@keyframes fu-enter{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--purple);box-shadow:0 0 0 3px #6257f51a}
+body[data-theme="dark"]{--page:#090d1a;--surface:#11182a;--surface-alt:#18213a;--text:#e9edff;--muted:#a0abc8;--line:#2b3452;--input-bg:#0c1222;--input-border:#35405f;--shadow:0 12px 36px #0002;color-scheme:dark;background:radial-gradient(ellipse at 12% 0%,#1c2450 0,transparent 36%),radial-gradient(ellipse at 95% 8%,#251849 0,transparent 30%),var(--page)}
+body[data-theme="dark"] header{background:linear-gradient(135deg,#151d38,#101426)}
+body[data-theme="dark"] .pill{background:#25214d;color:#c4bcff;border-color:#4b438c}
+body[data-theme="dark"] button.secondary{color:#d3d9ff;border-color:#333e65}
+body[data-theme="dark"] button.secondary:hover,body[data-theme="dark"] .theme-toggle:hover{background:#25214d;color:#e2ddff}
+body[data-theme="dark"] .tag{background:#222844;color:#d4d9ff;border-color:#343d62}
+body[data-theme="dark"] .message{background:#111c36;color:#dce4ff;border-color:#303d64}
+body[data-theme="dark"] .message.error{background:#321b29;border-color:#693348;color:#ffbdc7}
+body[data-theme="dark"] .message.success{background:#102d2b;border-color:#205b50;color:#9ef0d2}
+body[data-theme="dark"] .lead:hover,body[data-theme="dark"] .card:hover{border-color:#57508d}
+body[data-theme="dark"] input::placeholder{color:#7c88a9}
+@media(max-width:760px){.wrap{padding:12px}header,.card{padding:17px}.theme-toggle{position:static;margin:0 0 12px auto;display:flex;width:max-content}.grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
 </style>
 </head>
 <body><main class="wrap">
-<header><span class="pill">SECURE TEAM WORKSPACES</span><h1>FollowUp CRM</h1><p>One shared CRM · Separate workspaces · Role-based access.</p><p class="muted" style="margin-top:0">Cloud-backed workspace data. Your local-only classic CRM is preserved separately as a backup.</p></header>
+<header><span class="pill">SECURE TEAM WORKSPACES</span><h1>FollowUp CRM</h1><p>One shared CRM · Separate workspaces · Role-based access.</p><p class="muted" style="margin-top:0">Cloud-backed workspace data. Your local-only classic CRM is preserved separately as a backup.</p><button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch to dark theme" title="Switch theme"><span id="themeIcon" aria-hidden="true">◐</span><span id="themeLabel">Dark mode</span></button>
+</header>
 <div id="msg" class="message hidden" role="status"></div>
 <section id="auth" class="card">
 <div class="grid">
@@ -62,6 +104,12 @@ header h1{letter-spacing:-.035em}
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 (function(){
+const themeToggle=document.getElementById('themeToggle');
+const savedTheme=(()=>{try{return localStorage.getItem('followup-theme')}catch{return null}})();
+function applyTheme(theme){document.body.dataset.theme=theme;const dark=theme==='dark';if(themeToggle){themeToggle.innerHTML='<span id="themeIcon" aria-hidden="true">'+(dark?'☼':'◐')+'</span><span id="themeLabel">'+(dark?'Light mode':'Dark mode')+'</span>';themeToggle.setAttribute('aria-label',dark?'Switch to light theme':'Switch to dark theme');themeToggle.title=dark?'Switch to light theme':'Switch to dark theme'}}
+applyTheme(savedTheme==='dark'?'dark':'light');
+themeToggle?.addEventListener('click',()=>{const next=document.body.dataset.theme==='dark'?'light':'dark';applyTheme(next);try{localStorage.setItem('followup-theme',next)}catch{}});
+
 const cfg={url:'https://fkdqoiurgtqhlhvqtyoh.supabase.co',key:'sb_publishable_11gPpJDRRtyPjDedkk10GA__AUM2FoG'};
 const client=window.supabase.createClient(cfg.url,cfg.key,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
 const $=id=>document.getElementById(id);let currentUser=null;let teams=[];let activeTeam=null;let busy=false;let activeRole="member";let workspaceMembers=[];let editingRecordId=null;let editingPayload=null;
